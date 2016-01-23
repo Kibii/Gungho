@@ -10,7 +10,7 @@
   <tile id="3695" terrain="0,0,0,"/>
  </tileset>
  <tileset firstgid="14759" name="pokemon" tilewidth="16" tileheight="16" spacing="1" tilecount="0" columns="112">
-  <image source="../Downloads/Chrome Downloads/12591921_1067238723328784_770217412_o.jpg" width="1911" height="2048"/>
+  <image source="dawntileset.png"/>
  </tileset>
  <layer name="Tile Layer 1" width="64" height="48" offsetx="20.1143" offsety="85.7506">
   <data encoding="base64" compression="zlib">
