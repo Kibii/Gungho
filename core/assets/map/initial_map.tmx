@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.0" orientation="orthogonal" renderorder="right-down" width="64" height="48" tilewidth="16" tileheight="16" nextobjectid="1">
- <tileset firstgid="1" name="roguelikeCity_magenta" tilewidth="16" tileheight="16" spacing="1" tilecount="1036" columns="37">
-  <image source="../Downloads/Chrome Downloads/roguelike-modern-city-pack/Spritesheet/roguelikeCity_magenta.png" width="628" height="475"/>
- </tileset>
- <tileset firstgid="1037" name="Dawn" tilewidth="16" tileheight="16" tilecount="14758" columns="94">
-  <image source="Insight/core/assets/dawntileset.png" width="1504" height="2519"/>
+ <tileset firstgid="1" name="Dawn" tilewidth="16" tileheight="16" tilecount="14758" columns="94">
+  <image source="dawntileset.png" width="1504" height="2519"/>
   <terraintypes>
    <terrain name="steps" tile="-1"/>
   </terraintypes>
@@ -12,17 +9,17 @@
   <tile id="3601" terrain="0,0,0,0"/>
   <tile id="3695" terrain="0,0,0,"/>
  </tileset>
- <tileset firstgid="15795" name="pokemon" tilewidth="16" tileheight="16" spacing="1" tilecount="13440" columns="112">
+ <tileset firstgid="14759" name="pokemon" tilewidth="16" tileheight="16" spacing="1" tilecount="0" columns="112">
   <image source="../Downloads/Chrome Downloads/12591921_1067238723328784_770217412_o.jpg" width="1911" height="2048"/>
  </tileset>
  <layer name="Tile Layer 1" width="64" height="48" offsetx="20.1143" offsety="85.7506">
   <data encoding="base64" compression="zlib">
-   eJzt2EtOg1AUgOGTWktJGiauQE1ap304r3EXPhLrSlxB2xXoSOMS1AX4Hmqc+5rpGjxEScjlHF7Sey9wBv+gpcD9LoUWGg7AUqjzFsAp0xnmNYtt2gGYhZp3op9ZbQOsFdw6doT7aij+uJqO+CnDjgewS7Tn2e8/QNNEaTmj/wKdl0RXJfBTY+K+E+Knv/v7FfMH50Tgbv29PiT83LEvi5+6bmWJO/Z+I9x+P6GhYT83dl3NDPu/LOubOSeToubIN8atw53/r7jem9J7wrZMV6R/7AJsKX0Sc7KonnPM9aL9QQMNDV17/UVnq39gyF4nv63H/xj3f6KpbQv9OhuLv9T+W7wnukvRPXPvXHZ/F/fRS9EGM5a6+rsrv3H+YHlZ/Nxyyh/Y6uqv+/EXf/X8amG7XP/FL37xV83v//d/cNL5H5l7ANPX//88p0xrD8+Buo2PdtT/gu89ZezaifpvnPh1fL+O55m2Jn7zYxC/Wf/cNduIGNempn3b8PyvT/jz/P7nSfziF7/4xS9+8Yu/jv4fkhZwig==
+   eJzt2UlOwzAUgOGnupWqblgBUmHbgX0Rt2CQgJNwAtoTwIqqRwAOwLwEsWfawSHKsOqLKosotR1nsp34Sf0XVZvhixOnw7QG8B1qgp1JGmP4yLXjJsAw1Ki5+J7lOsBKzq1iR7itacSv6of8QsN2C2BH0G7Lff8+AziI9JvQf47OC0GXJfCL9kl2TpBffO7vVczPrwnu/qvNnx8y/bEvi180byVJNvZBfVx/J6aeZb9s3001tOz/dKwvyTUZl+gYBUbVMrLr/wWXe430FrMu2+XpHzQANiN9CI5JUT2lONZF+3ldA/Ua7vrzzlV/15LdJ7+r43+C2z811JaDfpMNyE9+8nvnby/Nk/n561X0c5uv/nC++n0efzr//yv7/H/DAG41uhP8dloFfxu3sabRumRffPXHXf9l88teF/l15r8q+3XGvyzzfxH+Z3zvY8Ku2KL/mqmXcdVvqiLnv7A96fxfBX+W+x/5/fZvYCMDuepPc/9PU1Z/8Nn/nun5HyTfAWz7s/xPqWsPH4PoOt7rdv225h5V5Cc/+c34TdxnVfUt+01sR1WH/Fb9M6dB5kU=
   </data>
  </layer>
  <layer name="Tile Layer 2" width="64" height="48">
   <data encoding="base64" compression="zlib">
-   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
+   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
   </data>
  </layer>
 </map>
