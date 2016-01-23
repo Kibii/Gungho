@@ -6,7 +6,7 @@ import com.gungho.game.GunghoGame;
 
 public class DesktopLauncher {
 	public static void main (String[] arg) {
-		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
-		new LwjglApplication(new GunghoGame(), config);
+		GunghoGame game = new GunghoGame();
+		new LwjglApplication(game, game.windowTitle, game.windowWidth, game.windowHeight);
 	}
 }
