@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="64" height="48" tilewidth="16" tileheight="16" nextobjectid="1">
+ <tileset firstgid="1" name="roguelikeCity_magenta" tilewidth="16" tileheight="16" spacing="1" tilecount="1036" columns="37">
+  <image source="../Downloads/Chrome Downloads/roguelike-modern-city-pack/Spritesheet/roguelikeCity_magenta.png" width="628" height="475"/>
+ </tileset>
+ <tileset firstgid="1037" name="Dawn" tilewidth="16" tileheight="16" tilecount="14758" columns="94">
+  <image source="Insight/core/assets/dawntileset.png" width="1504" height="2519"/>
+  <terraintypes>
+   <terrain name="steps" tile="-1"/>
+  </terraintypes>
+  <tile id="3507" terrain=",0,0,0"/>
+  <tile id="3601" terrain="0,0,0,0"/>
+  <tile id="3695" terrain="0,0,0,"/>
+ </tileset>
+ <tileset firstgid="15795" name="pokemon" tilewidth="16" tileheight="16" spacing="1" tilecount="13440" columns="112">
+  <image source="../Downloads/Chrome Downloads/12591921_1067238723328784_770217412_o.jpg" width="1911" height="2048"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="64" height="48" offsetx="20.1143" offsety="85.7506">
+  <data encoding="base64" compression="zlib">
+   eJzt2EtOg1AUgOGTWktJGiauQE1ap304r3EXPhLrSlxB2xXoSOMS1AX4Hmqc+5rpGjxEScjlHF7Sey9wBv+gpcD9LoUWGg7AUqjzFsAp0xnmNYtt2gGYhZp3op9ZbQOsFdw6doT7aij+uJqO+CnDjgewS7Tn2e8/QNNEaTmj/wKdl0RXJfBTY+K+E+Knv/v7FfMH50Tgbv29PiT83LEvi5+6bmWJO/Z+I9x+P6GhYT83dl3NDPu/LOubOSeToubIN8atw53/r7jem9J7wrZMV6R/7AJsKX0Sc7KonnPM9aL9QQMNDV17/UVnq39gyF4nv63H/xj3f6KpbQv9OhuLv9T+W7wnukvRPXPvXHZ/F/fRS9EGM5a6+rsrv3H+YHlZ/Nxyyh/Y6uqv+/EXf/X8amG7XP/FL37xV83v//d/cNL5H5l7ANPX//88p0xrD8+Buo2PdtT/gu89ZezaifpvnPh1fL+O55m2Jn7zYxC/Wf/cNduIGNempn3b8PyvT/jz/P7nSfziF7/4xS9+8Yu/jv4fkhZwig==
+  </data>
+ </layer>
+ <layer name="Tile Layer 2" width="64" height="48">
+  <data encoding="base64" compression="zlib">
+   eJztl91TFlUcx89FeRVCAs2oAQ8ZaEJTU6mhIlpTV45mipq3XXXTZS++I2BTMzWFEiKC9SdUlt32ImB1aeU7gjU6U1MiIaI202dnnx0Op7O75+zL8zyU35nPcJ59fs9yPru/PbsrROHm5YwZVbXhNTM1fj6tBs7/BX9dvqoQ4mv4Br6FE9APAzBY4daYHItTc3I88YRSVSlEBqrhIVgAD0MN1Fa6NSb+W8tyPPGEsgvH3bAH9kIL7INWaMv692dc14G59ASchO/g+7nu9477TPLvKJ0an8PxPFyAizAEl2AYRrL+gxmXmnn0BCyERfDIPPd7x72zVP0vwVl0bxIm0SL7N1QJsRxWwEpohFXQBKur3BrPvxXfNmiH/fBWDP/9BeLfheMh6IbD0ANHoBf6sv5O/zv+w/iOwGX4BX718V+C21JYFtPxSrEQV4vj7UMX2X8cxxswATdhEm7Bbbij+DfNpydgDTwDz86fuvZl/wN4H4TOmP7PlQjxfEm8fegi+2/MCLEJmmEzbIGt8BJsy7g1Xv/34tsHR+Ej+NjHfxTv6zAm+Z8o4jjCAAzCySLz+SbdB7L/JxkhPoXP4Bh8Dl/Acfgy49Z451+lP/u96r9+lhAvwIZZU9sWzOa+CjVQCwtnB89Rdk66D2T/4mohSuB+mAOlUAbl8ED19N953t7Yie7869KC7z5ohTZoD/FPq/eddGjm2r/433huJqj+RfdM/zyE7yUYhhG4HOKfZq4x11F4tTyYLmq2lbk46Q74zViAvzNupJdXQROshjXF7vY61oH6oum1Kl6N7ju1xiTr8FkPP5QHM674T5T6124Ief7rwfcI9EIfHM36v82c3wnx92qC/NX9BD2TmvZ0WGxqJ/G9BbfhDvyd9b/CnK9q/OV4Nd52ucYby/uR59RQ746Djp2Nv42zl8eY1+MW97sk04X/gzhWQKXiGnRMgo6TExv/d3F/L2X/oHlvhx2w09LXFr/8hvvvOTr/unmdhjNwNk/+QTFZt+PWyP1faP7qup1GjW3/y0nbX13/06hR+1+O7l4SxTeqfy6i9r8aU9ekz32uout/XXJxvecjuvXfL0F+ufR/jfev1+ENeBO2ww7Yudh+X7r+l+cfpe/Tzik8f4Sf4Gc4DWfgbAR/tf+9mF7X+fB/ok6IJ+EpWAJLYRk8XWe/L7/13/T6zsf1/z6eH0AHHICD0AkfRvDXPf94iXrvS/sY/IHnn3ANRuE6jMFfEfyD1n+/dc77my//tby37eJa3w17YC+0wIv19vvS9b9uHVQ/57sHzuF7Hi7ARRiCVx6134/f84+pS9iamFYa6PXlsAJWQmNdNH+/9d+LjUsueqALz0PSdd4tjQ8z7rFcA3Lx/ptkxvG7ITlOSOObjCct/eX+NxnLab9virB9xol8zjeyxm2S1rlmabyZ8ZbsZ9NekPvfZCy7yf7ydt1v40Q95yYx7QW5/03GspvsL2/X/TZO1HNuErkXkozsZrL9bu5mJsT2PhDnvlGIsb0P2I4LPbb3Adtxoac7wrvjTErYu8HE/9y/OYVnhUJKlHfDJPMPUy22hQ==
+  </data>
+ </layer>
+</map>
