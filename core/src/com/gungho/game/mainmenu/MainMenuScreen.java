@@ -30,9 +30,10 @@ public class MainMenuScreen extends DefaultScreen implements InputProcessor {
 
     @Override
     public void show() {
-        camera = new OrthographicCamera(width, height);
-        camera.position.x = width / 2;
-        camera.position.y = height / 2;
+        camera = new OrthographicCamera();
+
+        //camera.position.x = width / 2;
+        //camera.position.y = height / 2;
         camera.update();
     }
 
@@ -49,7 +50,6 @@ public class MainMenuScreen extends DefaultScreen implements InputProcessor {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         world.update(delta);
         renderer.render();
-
 
     }
 

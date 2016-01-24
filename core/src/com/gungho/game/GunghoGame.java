@@ -2,12 +2,13 @@ package com.gungho.game;
 
 import com.badlogic.gdx.Game;
 
-import com.gungho.game.mainmenu.MainMenuScreen;
-
 public class GunghoGame extends Game {
+	public static int windowWidth = 800;
+	public static int windowHeight = 600;
+	public static String windowTitle = "Gungho";
+
 	@Override
 	public void create() {
-		//setScreen(new MainMenuScreen(this));
-		setScreen(new MainMenuScreen(this));
+		setScreen(new GameScreen(this));
 	}
 }

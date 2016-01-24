@@ -3,11 +3,12 @@ package com.gungho.game
 /**
  * Created by amullarx on 1/23/16.
  */
-import com.badlogic.gdx.Input;
+import com.badlogic.gdx.Input
+import com.gungho.game.player.Player;
 
 class InputControllerTest extends groovy.util.GroovyTestCase {
     void testKeyDown() {
-    InputController inCont = new InputController();
+    InputController inCont = new InputController(new Player());
         inCont.keyDown(Input.Keys.UP);
         inCont.keyDown(Input.Keys.UP);
         assertEquals(1, inCont.numInputs());
@@ -37,7 +38,7 @@ class InputControllerTest extends groovy.util.GroovyTestCase {
     }
 
     void testKeyUp() {
-        InputController inCont = new InputController();
+        InputController inCont = new InputController(new Player());
 
         inCont.keyDown(Input.Keys.DOWN);
         inCont.keyDown(Input.Keys.RIGHT);

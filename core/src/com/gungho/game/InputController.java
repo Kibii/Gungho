@@ -9,15 +9,16 @@ import com.badlogic.gdx.Input;
 import com.badlogic.gdx.InputProcessor;
 import java.util.List;
 import java.util.Iterator;
+
+import com.gungho.game.player.Player;
 import com.sun.tools.javac.code.Attribute;
 
 import java.util.ArrayList;
 
-enum Direction {
-    NORTHWEST, NORTH, NORTHEAST, EAST, SOUTHEAST, SOUTH, SOUTHWEST, WEST
-}
-
 public class InputController implements InputProcessor {
+    public static enum Direction {
+        NORTHWEST, NORTH, NORTHEAST, EAST, SOUTHEAST, SOUTH, SOUTHWEST, WEST
+    }
     private final int UP_KEY = Input.Keys.UP;
     private final int DOWN_KEY = Input.Keys.DOWN;
     private final int LEFT_KEY = Input.Keys.LEFT;
@@ -28,9 +29,12 @@ public class InputController implements InputProcessor {
     private Direction currentDirection;
     private boolean isMoving;
 
-    public InputController() {
-    directionalInputList = new ArrayList<Integer>();
+    private Player player;
+
+    public InputController(Player player) {
+        directionalInputList = new ArrayList<Integer>();
         currentDirection = null;
+        this.player = player;
     }
 
     @Override
