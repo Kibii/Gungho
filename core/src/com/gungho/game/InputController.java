@@ -36,30 +36,31 @@ public class InputController implements InputProcessor {
         if (keycode == FIRE_KEY) {
             // TODO: Fire projectile in direction
         }
-        else if (directionalInputList.size() < 2) {
+        else if (directionalInputList.size() < 2 && !directionalInputList.contains(keycode)) {
                 switch (keycode) {
                     case UP_KEY:
                         if (directionalInputList.contains(DOWN_KEY)) {
-                            directionalInputList.remove(DOWN_KEY);
-                            directionalInputList.add(keycode);}
+                            directionalInputList.remove(new Integer(DOWN_KEY));
+                        }
+                        directionalInputList.add(keycode);
                         break;
                     case DOWN_KEY:
                         if (directionalInputList.contains(UP_KEY)) {
-                            directionalInputList.remove(UP_KEY);
-                            directionalInputList.add(keycode);
+                            directionalInputList.remove(new Integer(UP_KEY));
                         }
+                        directionalInputList.add(keycode);
                         break;
                     case LEFT_KEY:
                         if (directionalInputList.contains(RIGHT_KEY)) {
-                            directionalInputList.remove(RIGHT_KEY);
-                            directionalInputList.add(keycode);
+                            directionalInputList.remove(new Integer(RIGHT_KEY));
                         }
+                        directionalInputList.add(keycode);
                         break;
                     case RIGHT_KEY:
                         if (directionalInputList.contains(LEFT_KEY)) {
-                            directionalInputList.remove(LEFT_KEY);
-                            directionalInputList.add(keycode);
+                            directionalInputList.remove(new Integer(LEFT_KEY));
                         }
+                        directionalInputList.add(keycode);
                         break;
                     default:
                         break;
@@ -71,7 +72,7 @@ public class InputController implements InputProcessor {
     @Override
     public boolean keyUp(int keycode) {
         if(directionalInputList.contains(keycode))
-            directionalInputList.remove(keycode);
+            directionalInputList.remove(new Integer(keycode));
         return true;
     }
 
@@ -98,6 +99,24 @@ public class InputController implements InputProcessor {
     @Override
     public boolean scrolled(int amount) {
         return false;
+    }
+
+    public void clearInputs() {
+        directionalInputList.clear();
+    }
+
+    public int numInputs() {
+        return directionalInputList.size();
+    }
+
+    public void movementDirection() {
+        for (Iterator i = directionalInputList.iterator(); i.hasNext();) {
+            System.out.print(i);
+        }
+    }
+
+    public List<Integer> getDirections() {
+        return directionalInputList;
     }
 
 }
