@@ -32,16 +32,18 @@ class InputControllerTest extends groovy.util.GroovyTestCase {
         for(int i = 0; i < input.size(); i++) {
             assertEquals(input[i], directions[i]);
         }
+        assertEquals(Direction.NORTHWEST, inCont.getCurrentDirection());
         //inCont.movementDirection();
     }
 
     void testKeyUp() {
         InputController inCont = new InputController();
 
-        inCont.keyDown(Input.Keys.UP);
-        inCont.keyDown(Input.Keys.LEFT);
-        inCont.keyUp(Input.Keys.UP);
+        inCont.keyDown(Input.Keys.DOWN);
+        inCont.keyDown(Input.Keys.RIGHT);
+        inCont.keyUp(Input.Keys.DOWN);
         assertEquals(1, inCont.numInputs());
+        assertEquals(Direction.EAST, inCont.getCurrentDirection());
 
     }
 }

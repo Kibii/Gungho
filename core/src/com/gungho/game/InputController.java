@@ -13,6 +13,10 @@ import com.sun.tools.javac.code.Attribute;
 
 import java.util.ArrayList;
 
+enum Direction {
+    NORTHWEST, NORTH, NORTHEAST, EAST, SOUTHEAST, SOUTH, SOUTHWEST, WEST
+}
+
 public class InputController implements InputProcessor {
     private final int UP_KEY = Input.Keys.UP;
     private final int DOWN_KEY = Input.Keys.DOWN;
@@ -21,9 +25,12 @@ public class InputController implements InputProcessor {
     private final int FIRE_KEY = Input.Keys.SPACE;
 
     private List<Integer> directionalInputList;
+    private Direction currentDirection;
+    private boolean isMoving;
 
     public InputController() {
     directionalInputList = new ArrayList<Integer>();
+        currentDirection = null;
     }
 
     @Override
@@ -43,24 +50,28 @@ public class InputController implements InputProcessor {
                             directionalInputList.remove(new Integer(DOWN_KEY));
                         }
                         directionalInputList.add(keycode);
+                        updateCurrentDirection();
                         break;
                     case DOWN_KEY:
                         if (directionalInputList.contains(UP_KEY)) {
                             directionalInputList.remove(new Integer(UP_KEY));
                         }
                         directionalInputList.add(keycode);
+                        updateCurrentDirection();
                         break;
                     case LEFT_KEY:
                         if (directionalInputList.contains(RIGHT_KEY)) {
                             directionalInputList.remove(new Integer(RIGHT_KEY));
                         }
                         directionalInputList.add(keycode);
+                        updateCurrentDirection();
                         break;
                     case RIGHT_KEY:
                         if (directionalInputList.contains(LEFT_KEY)) {
                             directionalInputList.remove(new Integer(LEFT_KEY));
                         }
                         directionalInputList.add(keycode);
+                        updateCurrentDirection();
                         break;
                     default:
                         break;
@@ -71,8 +82,10 @@ public class InputController implements InputProcessor {
 
     @Override
     public boolean keyUp(int keycode) {
-        if(directionalInputList.contains(keycode))
+        if(directionalInputList.contains(keycode)) {
             directionalInputList.remove(new Integer(keycode));
+            updateCurrentDirection();
+        }
         return true;
     }
 
@@ -101,6 +114,10 @@ public class InputController implements InputProcessor {
         return false;
     }
 
+    public Direction getCurrentDirection() {
+        return currentDirection;
+    }
+
     public void clearInputs() {
         directionalInputList.clear();
     }
@@ -118,5 +135,57 @@ public class InputController implements InputProcessor {
     public List<Integer> getDirections() {
         return directionalInputList;
     }
+
+    private void updateCurrentDirection() {
+        if(directionalInputList.size() == 1) {
+            switch (directionalInputList.get(0)) {
+                case UP_KEY:
+                    currentDirection = Direction.NORTH;
+                    break;
+                case DOWN_KEY:
+                    currentDirection = Direction.SOUTH;
+                    break;
+                case LEFT_KEY:
+                    currentDirection = Direction.WEST;
+                    break;
+                case RIGHT_KEY:
+                    currentDirection = Direction.EAST;
+                    break;
+                default:
+                    break;
+            }
+        }
+        else if(directionalInputList.size() == 2) {
+            switch (directionalInputList.get(1)) {
+                case UP_KEY:
+                    if(directionalInputList.get(0) == LEFT_KEY)
+                        currentDirection = Direction.NORTHWEST;
+                    else
+                        currentDirection = Direction.NORTHEAST;
+                    break;
+                case DOWN_KEY:
+                    if(directionalInputList.get(0) == LEFT_KEY)
+                        currentDirection = Direction.SOUTHWEST;
+                    else
+                        currentDirection = Direction.SOUTHEAST;
+                    break;
+                case LEFT_KEY:
+                    if(directionalInputList.get(0) == UP_KEY)
+                        currentDirection = Direction.NORTHWEST;
+                    else
+                        currentDirection = Direction.SOUTHWEST;
+                    break;
+                case RIGHT_KEY:
+                    if(directionalInputList.get(0) == UP_KEY)
+                        currentDirection = Direction.NORTHEAST;
+                    else
+                        currentDirection = Direction.SOUTHEAST;
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+
 
 }
