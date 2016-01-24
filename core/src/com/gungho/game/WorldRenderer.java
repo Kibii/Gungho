@@ -27,11 +27,7 @@ public class WorldRenderer extends OrthogonalTiledMapRenderer{
 
     public WorldRenderer(TiledMap map) {
         super(map);
-        System.out.println("World Renderer constructor");
         sprites = new ArrayList<Sprite>();
-
-        //TODO add sprites
-        //sprites = new ArrayList<Sprite>();
     }
 
     public void addSprite(Sprite sprite){
@@ -41,23 +37,17 @@ public class WorldRenderer extends OrthogonalTiledMapRenderer{
     @Override
     public void render() {
         beginRender();
-        System.out.println("World Renderer render");
         stateTime += Gdx.graphics.getDeltaTime();
         //batch.begin();
-        int currentLayer = 1;
+        int currentLayer = 0;
 
         for (MapLayer layer : map.getLayers()) {
-            System.out.println("map layer" + layer);
             if (layer.isVisible()) {
-                System.out.println("map is visible");
                 if (layer instanceof TiledMapTileLayer) {
-                    System.out.println("layerInstanceof tiledmap");
                     renderTileLayer((TiledMapTileLayer)layer);
                     currentLayer++;
-                    System.out.println(currentLayer);
                     //TODO: walls layer < ornamental layer --> check to see if issue with collisions
                     if(currentLayer == drawSpritesAfterLayer){
-                        System.out.println("drawspritesafterlayer");
                         for(Sprite sprite : sprites) {
                             sprite.draw(this.getBatch());
                         }

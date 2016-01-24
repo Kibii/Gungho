@@ -24,8 +24,8 @@ public class MainMenuScreen extends DefaultScreen implements InputProcessor {
     public void show() {
         camera = new OrthographicCamera();
 
-        camera.position.x = width / 2;
-        camera.position.y = height / 2;
+        //camera.position.x = width / 2;
+        //camera.position.y = height / 2;
         camera.update();
     }
 

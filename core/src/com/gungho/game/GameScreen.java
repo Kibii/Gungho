@@ -56,22 +56,17 @@ public class GameScreen extends DefaultScreen implements InputProcessor {
     @Override
     public void show() {
         camera = new OrthographicCamera();
-
-        //center
-        //TODO position camera
-        camera.position.x = width / 2;
-        camera.position.y = height / 2;
+        camera.setToOrtho(false, game.windowWidth, game.windowHeight);
         camera.update();
     }
 
     @Override
     public void resize(int width, int height) {
-
+        stage.getViewport().update(game.windowWidth, game.windowHeight, true);
     }
 
     @Override
     public void render(float delta) {
-        System.out.println("GameScreen render");
         Gdx.gl.glClearColor(0.7f, 0.7f, 1.0f, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
